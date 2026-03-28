@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">home</a>
+            <a href="./about.html">about</a>
+            <a href="./contact.html">contact</a>
+        </nav>
+    </header>
+
+    <section class="about-store">
+        <div class="container">
+            <h1>About Clothes For All</h1>
+            <p>
+                <strong>Clothes For All</strong> is a fashion brand built on the belief that style should be accessible to everyone. 
+                We offer trendy, comfortable, and affordable clothing designed to suit every personality, body type, and lifestyle. 
+                Our collections are carefully selected to combine quality, comfort, and modern design — ensuring that everyone 
+                can express themselves confidently without overspending.
+            </p>
+            <p>
+                At Clothes For All, we are committed to inclusivity and diversity. Whether you're shopping for everyday essentials, 
+                casual wear, or statement pieces, our goal is to provide options that make you look good and feel even better.
+            </p>
+        </div>
+    </section>
+
+    <section class="about-founder">
+        <div class="container">
+            <h2>Meet The Founder</h2>
+            <p>
+                Clothes For All was founded by a passionate entrepreneur who believed that fashion should not be limited by price, 
+                size, or background. Inspired by a desire to create a brand that welcomes everyone, the founder started this journey 
+                with a simple mission: make quality clothing available for all.
+            </p>
+            <p>
+                With dedication, creativity, and a strong focus on customer satisfaction, the founder continues to lead the brand 
+                with innovation and authenticity — ensuring that Clothes For All remains a place where everyone feels represented 
+                and valued.
+            </p>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <article>
+            <img src="https://www.shutterstock.com/image-photo/pasay-metro-manila-philippines-nov-600nw-2576427107.jpg"/>
+        </article>
+        <article>
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiyisKz-aQs3ly9X4P9iUSxw4Cnw927BDKxASTk_f4nvd-jGXVVgrHK_aBD-aeGHgbKrdSOjRaa-_5A1_d9IgdUaiQoIrmLekN3YgPgm_WYonFJtH-JSkpeRYyNceqeBf-Op0aPFE7qJKCJ/s1600/P1180092-01.jpeg"/>
+        </article>
+        <article>
+            <img src="https://sanctum.london/wp-content/webpc-passthru.php?src=https://sanctum.london/wp-content/uploads/2022/11/beyond-retro.jpg&nocache=1"/>
+        </article>
+    </section>
+
+    <footer>
+        <p>Contact us at 012 345 6789</p>
+        <p>Email us at clothesforall@gmail.com</p>
+        <div class="social">
+            <a href="">Whatsapp</a>
+            <a href="">Facebook</a>
+            <a href="">Instagram</a>
+        </div>
+        <p> 2026 Clothes For All</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const galleryItems = document.querySelectorAll(".gallery article")
+
+            const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                })
+            }, { threshold: 0.1 })
+
+            galleryItems.forEach(item => {
+                revealOnScroll.observe(item);
+            })
+
+        })
+    </script>
+
+</body>
+</html>

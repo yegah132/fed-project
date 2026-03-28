@@ -3,43 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trader store</title>
+    <title>clothing store</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
             <a href="index.html">home</a>
-            <a href="about.html">about</a>
-            <a href="shop.html">shop</a>
-            <a href="contact.html">contact</a>
-
-
+            <a href="src/about.html">about</a>
+            <a href="src/contact.html">contact</a>
         </nav>
     </header>
     <main>
-        <h1>Trader store</h1>
-        <p>welcome to our trader store step inside where value and quality walk side by side clean, safe and welcome store</p>
-        <div class="best seller"</h2>
-        <section class="products">
-        <article class="products">
-            <img src="https://www.gettyimages.com/search/2/image?phrase=trader+joes&tracked_gsrp_landing=https%3A%2F%2Fwww.gettyimages.com%2Fphotos%2Ftrader-joes"
-            <p>Trusted brands premium goods</p>
-        <article>
-
-        <article>class="product">
-            <img src="https://www.cnbc.com/2020/03/09/psychology-behind-how-trader-joes-became-a-favorite-grocery-store.html"/>
-            <p></p>
-        </article>
-
-        <article class="product">
-            <img src="https://www.businessinsider.com/wegmans-trader-joes-food-items-compared-2019-11"/>
-            <p></p>
-        </article>
-    </section>
-</div>
-</main>
-
+        <h1>clothing store</h1>
+        <p>Welcom we are a shop that sells unique clothes in all shapes and sizes for all people
+            Any clothes that you can imagine, we have it.
+        </p>
+        <div class="best_seller">
+            <h2>Our best seller</h2>
+            <section class="products">
+                <article class="product">
+                    <img src="https://m.media-amazon.com/images/I/61LCuqIVaUL._AC_SL1250_.jpg">
+                    <p>A black petite dress with a lace sleeve</p>
+                </article>
+                <article class="product">
+                    <img src="https://static.vecteezy.com/system/resources/previews/022/255/712/non_2x/beautiful-shoes-generative-ai-free-photo.jpg">
+                    <p></p>
+                </article>
+                <article class="product">
+                    <img src="https://s.alicdn.com/@sc04/kf/H51c01581b3a04466be6cca4a0e88f36bO/Women-s-High-Waist-Flap-Pocket-Cargo-Loose-Fit-Breathable-Summer-Casual-Denim-Jeans-for-Girls-10-12-Years-Woven-Fashion-Element.jpg">
+                    <p>A baggey jeans that comes in all sizes</p>
+                </article>
+            </section>
+        </div>
     </main>
+
+    <footer>
+        <p>Contact us at 012 345 6789</p>
+        <p>Email us at clothesforall@gmail.com</p>
+        <div class="social">
+            <a href="">Whatsapp</a>
+            <a href="">Facebook</a>
+            <a href="">Instagram</a>
+        </div>
+        <p> 2026 Clothes For All</p>
+    </footer>
+
+    <script>
+        const container = document.querySelector(".products")
+        let autoScroll;
+        const scrollStep = 320;
+        const intervalTime = 2500;
+
+        function startScroll() {
+            autoScroll = setInterval(() => {
+                const maxScroll = container.scrollWidth - container.clientWidth;
+                if (container.scrollLeft >= maxScroll - 50) {
+                    container.scrollTo({left: 0, behavior: "smooth"})
+                } else {
+                    container.scrollBy({left: scrollStep, behavior: "smooth"})
+                }
+            }, intervalTime)
+        }
+
+        function stopScroll() {
+            clearInterval(autoScroll)
+        }
+
+        container.addEventListener("mouseenter", stopScroll)
+        container.addEventListener("mouseleave", startScroll)
+        startScroll()
+    </script>
 </body>
 </html>
